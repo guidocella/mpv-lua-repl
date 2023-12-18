@@ -40,7 +40,7 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
         submit = function (code)
             -- Auto insert return before single lines, without breaking
             -- assignments, loops and conditionals. Unfortunately, this breaks
-            -- multiple statements on the same, like line = 'print("foo") print("bar")'
+            -- multiple statements on the same line like 'print("foo") print("bar")'
             if code:find('[;\n]') == nil and
                code:find('^%s*return%s') == nil and
                -- Don't insert return before assigments, but insert it before
