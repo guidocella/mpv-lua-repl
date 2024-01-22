@@ -3,3 +3,5 @@ A Lua REPL in the console with Tab completion and pretty-printing of returned ta
 It is bound to `Ctrl+r` by default, and you can bind a different key to `script-binding lua-repl`.
 
 `return` is automatically inserted before statements when doing so does not break them.
+
+This currently requires git master for `mp.input` support.
