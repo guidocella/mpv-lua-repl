@@ -45,7 +45,7 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
                code:find('^%s*return%s') == nil and
                -- Don't insert return before assigments, but insert it before
                -- tables with indexes like {['foo'] = 'bar'}.
-               (code:find('[^=]=[^=]') == nil or code:find('{.*[^=]=[^=]')) and
+               (code:find('[^=]=[^=]') == nil or code:find('^%s*{.*[^=]=[^=]')) and
                code:find('^%s*if%s') == nil and
                code:find('^%s*for%s') == nil and
                code:find('^%s*while%s') == nil and
