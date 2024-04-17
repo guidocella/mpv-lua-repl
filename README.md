@@ -4,4 +4,4 @@ It is bound to `Ctrl+r` by default, and you can bind a different key to `script-
 
 `return` is automatically inserted before statements when doing so does not break them.
 
-This currently requires git master for `mp.input` support.
+This currently requires mpv >= 0.38 for `mp.input` support.
