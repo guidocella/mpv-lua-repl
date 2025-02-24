@@ -5,6 +5,7 @@ input = require 'mp.input'
 mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
     input.get({
         prompt = 'Evaluate Lua:',
+        keep_open = true,
         opened = function ()
             -- Show messages logged with print() without switching to the regular console.
             mp.enable_messages('terminal-default')
