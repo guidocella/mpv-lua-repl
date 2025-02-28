@@ -36,7 +36,7 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
                 candidates[#candidates+1] = key .. suffix
             end
 
-            return candidates, code:find('[%w_]*$')
+            return candidates, code:find('[%w_]*$'), nil
         end,
         submit = function (code)
             -- Auto insert return before single lines, without breaking
