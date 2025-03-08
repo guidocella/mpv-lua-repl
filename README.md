@@ -3,3 +3,5 @@ A Lua REPL in the console with autocompletion and pretty-printing of returned ta
 It is bound to `Ctrl+r` by default, and you can bind a different key to `script-binding lua-repl`.
 
 `return` is automatically inserted before statements when doing so does not break them.
+
+`--script-opt=lua_repl-persist_history=yes` will save the history to disk.

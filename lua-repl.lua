@@ -1,3 +1,10 @@
+local options = {
+    persist_history = false,
+    history_path = '~~state/lua_history.txt',
+}
+
+require 'mp.options'.read_options(options)
+
 -- These are global to make them available in the REPL.
 utils = require 'mp.utils'
 input = require 'mp.input'
@@ -6,6 +13,7 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
     input.get({
         prompt = 'Evaluate Lua:',
         keep_open = true,
+        history_path = options.persist_history and mp.command_native({"expand-path", options.history_path}) or nil,
         opened = function ()
             -- Show messages logged with print() without switching to the regular console.
             mp.enable_messages('terminal-default')
