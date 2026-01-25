@@ -64,13 +64,13 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
 
             local result, err = load(code)
             if result == nil then
-                input.log_error(err)
+                input.log(err, "{\\c&H7a77f2&}", "\027[31m")
                 return
             end
 
             result = {pcall(result)}
             if result[1] == false then
-                input.log_error(result[2])
+                input.log(result[2], "{\\c&H7a77f2&}", "\027[31m")
                 return
             end
 
