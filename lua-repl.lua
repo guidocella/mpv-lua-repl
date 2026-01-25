@@ -62,9 +62,9 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
                 code = 'return ' .. code
             end
 
-            local result, error = load(code)
+            local result, err = load(code)
             if result == nil then
-                input.log_error(error)
+                input.log_error(err)
                 return
             end
 
