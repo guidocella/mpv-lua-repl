@@ -18,7 +18,7 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
             -- Show messages logged with print() without switching to the regular console.
             mp.enable_messages('terminal-default')
         end,
-        complete = function (code)
+        complete = function (code, response)
             local last_identifier = code:match('[%w_%.]*$')
             if last_identifier == nil then
                 return
@@ -44,7 +44,11 @@ mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
                 candidates[#candidates+1] = key .. suffix
             end
 
-            return candidates, code:find('[%w_]*$'), nil
+            if response then
+                response(candidates, code:find('[%w_]*$'), nil)
+            else
+                return candidates, code:find('[%w_]*$'), nil
+            end
         end,
         submit = function (code)
             -- Auto insert return before single lines, without breaking
