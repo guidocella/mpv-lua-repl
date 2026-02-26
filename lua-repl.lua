@@ -9,7 +9,7 @@ require 'mp.options'.read_options(options)
 utils = require 'mp.utils'
 input = require 'mp.input'
 
-mp.add_key_binding('Ctrl+r', 'lua-repl', function ()
+mp.add_key_binding('Ctrl+l', 'lua-repl', function ()
     input.get({
         prompt = 'Evaluate Lua:',
         keep_open = true,
